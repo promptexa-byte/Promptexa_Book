@@ -1,0 +1,48 @@
+name: Build Windows EXE
+
+# اجرای دستی از تب Actions در گیت‌هاب، یا خودکار با هر Push به main
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - "book_reader.py"
+      - "book.ptxbook"
+      - "style.qss"
+      - "requirements.txt"
+      - ".github/workflows/build-exe.yml"
+
+jobs:
+  build:
+    # نکته کلیدی: runner ویندوزی واقعی، نه لینوکس
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build EXE with PyInstaller
+        run: |
+          pyinstaller --onefile --windowed --name="Promptexa_Viewer" --add-data "style.qss;." book_reader.py
+
+      - name: Upload Viewer EXE as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Promptexa-Viewer-EXE
+          path: dist/Promptexa_Viewer.exe
+
+      - name: Upload book file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Promptexa-Book-File
+          path: book.ptxbook
