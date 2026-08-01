@@ -1,0 +1,87 @@
+/* ==========================================
+   استایل کتاب امن اندروید WebView
+   نویسنده: وحید خلج - www.promptexa.ir
+   ========================================== */
+
+QMainWindow { background: #f0f0f5; }
+
+#sidebar { background: #1a1a2e; border-left: 2px solid #6c5ce7; }
+#sidebar_title { color: #fff; font-size: 20px; font-weight: bold; padding: 10px; }
+
+#search_box {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 13px;
+    margin: 4px 6px 8px;
+}
+
+#chapter_list { background: transparent; border: none; color: #e0e0e0; font-size: 13px; }
+#chapter_list::item { padding: 10px 12px; border-radius: 8px; margin: 2px 0; }
+#chapter_list::item:hover { background: rgba(108,92,231,0.3); color: #fff; }
+#chapter_list::item:selected { background: #6c5ce7; color: #fff; border-radius: 8px; }
+
+#brand_frame { padding: 12px 0 4px; border-top: 1px solid #2d2d4f; margin-top: 8px; }
+#brand_info { color: #a0a0c0; font-size: 14px; font-weight: bold; }
+#brand_link { color: #6c5ce7; font-size: 12px; padding: 2px 0; }
+#version_label { color: #6c5ce7; font-size: 11px; margin-top: 4px; }
+
+#content_panel { background: #fff; }
+
+#header { background: #6c5ce7; padding: 12px 20px; }
+#chapter_title { color: #fff; font-size: 17px; font-weight: bold; }
+#nav_btn {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 7px 16px;
+    border-radius: 16px;
+    font-size: 12px;
+    margin-inline-start: 6px;
+}
+#nav_btn:hover { background: rgba(255,255,255,0.3); }
+
+#copy_bar_scroll { background: #f3f1fc; border-bottom: 1px solid #e0deef; }
+#copy_bar_label { color: #4a3f8a; font-size: 12px; font-weight: bold; padding-inline-end: 6px; }
+#copy_btn {
+    background: #6c5ce7;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 14px;
+    font-size: 12px;
+}
+#copy_btn:hover { background: #5a4bd1; }
+
+#content_display {
+    background: #fff;
+    border: none;
+    padding: 20px 40px;
+    font-size: 15px;
+    color: #2d2d3f;
+}
+
+#footer {
+    background: #1a1a2e;
+    color: #a0a0c0;
+    padding: 10px;
+    font-size: 11px;
+    border-top: 2px solid #6c5ce7;
+}
+
+QScrollBar:vertical { width: 10px; background: #f0f0f5; border-radius: 5px; }
+QScrollBar::handle:vertical { background: #6c5ce7; border-radius: 5px; min-height: 30px; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0px; }
+
+QScrollBar:horizontal { height: 8px; background: #f3f1fc; border-radius: 4px; }
+QScrollBar::handle:horizontal { background: #6c5ce7; border-radius: 4px; min-width: 30px; }
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { width: 0px; }
+
+QMessageBox { background: #fff; }
+QMessageBox QPushButton {
+    background: #6c5ce7; color: #fff; border: none;
+    padding: 8px 20px; border-radius: 8px;
+}
+QMessageBox QPushButton:hover { background: #5a4bd1; }
